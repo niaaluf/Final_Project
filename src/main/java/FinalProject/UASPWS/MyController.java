@@ -62,6 +62,7 @@ public class MyController {
 	@GetMapping("/GET")
 	public List<Uaspws> getTabel(){
 		List<Uaspws> list = new ArrayList<>();
+                
 		try {
 			list = control.findUaspwsEntities();
 		}
