@@ -10,7 +10,8 @@
         <hr>
         <script>
 			const url = "http://localhost:8080/POST";
-			function post(){
+                        //mengirim data
+			function post(){ 
 				let newID = document.getElementById("myid").value;
 				let name = document.getElementById("name").value;
 				let NIK = document.getElementById("nik").value;
@@ -23,13 +24,14 @@
 					data: dataJson,
 					contentType: 'application/json',
 					dataType: 'text',
+                                        
 					success: function(result){
 						console.log(result);
 					}
 				});
 			}
-			
-			function put(){
+			//edit data
+			function put(){ 
 				const urlp = "http://localhost:8080/PUT";
 				let editID = document.getElementById("myid").value;
 				let name = document.getElementById("name").value;
@@ -49,7 +51,7 @@
 					}
 				});
 			}
-			
+			//menampilkan data
 			function get(){
 				const urlg = "http://localhost:8080/GET";
 				$.ajax({
@@ -61,7 +63,7 @@
 					}
 				});
 			}
-			
+			//mendelete data
 			function delNIM(){
 				const urlg = "http://localhost:8080/DELETE";
 				let editID = document.getElementById("myid").value;
@@ -83,10 +85,11 @@
 			}
 			
 		</script>
-                ID      :      <input   type="text" id="myid" name="myid">
-                Nama    :   <input   type="text" id="name" name="name">
-                NIK     :     <input   type="text" id="nik" name="nik">
-                Address :   <input   type="text" id="address" name="address">
+                ID      : <input   type="text" id="myid" name="myid">
+                Nama    : <input   type="text" id="name" name="name">
+                NIK     : <input   type="text" id="nik" name="nik">
+                Address : <input   type="text" id="address" name="address">
+                Picture : <input type="file" id="photo" name="photo">
                 
 		<hr>
 		<button onclick="get()">Get The Data from Web Server</button><br>
